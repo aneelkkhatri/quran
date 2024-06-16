@@ -1,3 +1,1 @@
-# quran
-# quran
-# quran
+# quran selected verses
