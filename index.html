@@ -1,0 +1,36 @@
+<html>
+<head>
+	<style type="text/css">
+		body {
+			width: 400px;
+			margin: auto;
+			line-height: 24px;
+		}
+		div {
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div id="main"></div>
+	<script type="text/javascript" src="./verse-codes.js" charset="utf-8"></script>
+	<script type="text/javascript" src="./quran-com-verses-selected.js" charset="utf-8"></script>
+	<script type="text/javascript">
+
+		let mainEl = document.getElementById("main");
+
+		Object.keys(chapters).forEach(ch => {
+			let verses = chapters[ch];
+			let codes = verseCodes[ch];
+			for (let i in verses) {
+				let verse = verses[i];
+				let code = codes[i];
+				let div = document.createElement('div');
+				div.textContent = "["+ch+":"+code+"] " + verse[0].text;
+				mainEl.appendChild(div);
+			};
+		});
+	</script>
+</body>
+</html>
